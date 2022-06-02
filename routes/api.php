@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+/* Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
-});
+}); */
+
+// middleware
+// TODO group by route v1
+Route::post('/screening', [\App\Api\V1\Screenings\ScreeningController::class, 'process']);
+
+// (\App\Http\Middleware\VerifyCsrfToken::class)
